@@ -15,7 +15,13 @@ function getUserlastName() {
       	resolve({
          	lastName: 'Protskyi'
       	});
-      }, 10000);
+      }, 5000);
+	})
+}
+
+function getUserNameAll() {
+	return new Promise(function(resolve, reject) {
+		resolve(getUserlastName());
 	})
 }
 
@@ -23,7 +29,7 @@ function getUserlastName() {
 async function showAllData() {
 	try {	
 		const userName = await getUserName();
-		const userlastName = await getUserlastName();
+		const userlastName = await getUserNameAll();
 		console.log(userName, userlastName);
 	} catch (err) {
 		console.log("error")
