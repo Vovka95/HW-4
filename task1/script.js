@@ -1,6 +1,6 @@
 if(!Array.prototype.map) {
 
-	Array.prototype.map = function(callback, array) {
+	Array.prototype.map = function(callback, thisArg) {
 	
   	if (this == null) {
       throw new TypeError(' this is null or not defined');
